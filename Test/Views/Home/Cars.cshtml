@@ -1,0 +1,101 @@
+﻿@model Test.Models.InsuranceСar;
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - КАСКО</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/car.css" />
+</head>
+
+<body>
+    <div id="order">
+        <div class="container">
+            <form asp-action="Cars" asp-controller="home" class="form-order">
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+                <div class="form-group">
+                    <input type="text" asp-for="NSF" class="form-control" placeholder="@Localizer["SNP"]" value="@if (ViewBag.User != null) @ViewBag.NSF" />
+                    <span asp-validation-for="NSF"></span>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" asp-for="Email" class="form-control" placeholder="@Localizer["Email"]" value="@if (ViewBag.User != null) @ViewBag.User.Email" />
+                    <span asp-validation-for="Email"></span>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" asp-for="Phone" class="form-control" placeholder="@Localizer["Phone"]" value="@if (ViewBag.User != null) @ViewBag.User.Phone" />
+                    <span asp-validation-for="Phone"></span>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" asp-for="City" class="form-control" placeholder="@Localizer["City"]" />
+                    <span asp-validation-for="City"></span>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" asp-for="ModelCar" class="form-control" placeholder="@Localizer["Model"]" />
+                    <span asp-validation-for="ModelCar"></span>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" asp-for="CarYear" class="form-control" placeholder="@Localizer["Year"]" />
+                    <span asp-validation-for="CarYear"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="@Localizer["Send"]" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="explanation">
+
+            <div class="row">
+                <h1>@Localizer["Why"]  </h1>
+
+
+
+                <div class="resp ">
+
+                    <br />
+                    <ul>
+                        <li>
+                            @Localizer["Why_1"]
+
+                        </li>
+                        <li>
+                            @Localizer["Why_2"]
+                        </li>
+                        <li>
+                            @Localizer["Why_3"]
+                        </li>
+                        <li>
+                            @Localizer["Why_4"]
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

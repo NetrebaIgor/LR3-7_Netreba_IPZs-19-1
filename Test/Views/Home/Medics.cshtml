@@ -1,0 +1,170 @@
+﻿@model Test.Models.InsuranceMedic;
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @Localizer["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script><!--подключение jquery-->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/medic.css" />
+</head>
+
+<body>
+
+    <div id="order">
+
+        <div class="container">
+            <form asp-action="medics" asp-controller="home" class="form-order">
+                <div>
+                    <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+                    <div class="form-group">
+                        <input type="text" asp-for="NSF" class="form-control" placeholder="Прізвище Ім'я По батькові" value="@if (ViewBag.User != null) @ViewBag.NSF " />
+                        <span asp-validation-for="NSF"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" asp-for="Email" class="form-control" placeholder="E-mail" value="@if (ViewBag.User != null) @ViewBag.User.Email" />
+                        <span asp-validation-for="Email"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" asp-for="Phone" class="form-control" placeholder="Телефон" value="@if (ViewBag.User != null) @ViewBag.User.Phone" />
+                        <span asp-validation-for="Phone"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" asp-for="City" class="form-control" placeholder="Місто" />
+                        <span asp-validation-for="City"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Clinic" class="control-label" style="color: white; text-align:center; ">Хочу обслуговуватися в:</label>
+                        <select asp-for="Clinic" class="form-control">
+                            <option value="Приватна клініка">@Localizer["value1"]</option>
+                            <option value="Державна клініка">@Localizer["value2"]</option>
+                            <option value="Преміум клініка">@Localizer["value3"]</option>
+                            <option selected="selected" disabled="disabled">@Localizer["value_Def"]</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="@Localizer["Get"]" class="btn btn-default" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div id="explanation">
+
+            <div class="row">
+                <h1> @Localizer["Covered"] </h1>
+
+                <div class="resp ">
+                    <h2>
+                      @Localizer["Covered_text_1"]  
+                    </h2>
+                    <br />
+                    <ul>
+                        <li>
+                           @Localizer["Covered_text_2"] 
+                        </li>
+                        <li>
+                           @Localizer["Covered_text_3"] 
+                        </li>
+                        <li>
+                           @Localizer["Covered_text_4"] 
+                        </li>
+                        <li>
+                           @Localizer["Covered_text_5"] 
+                        </li>
+                        <li> <b> @Localizer["Covered_text_6"] </b></li>
+                    </ul>
+
+                </div>
+
+                <div class="resp ">
+                    <h2>
+                       @Localizer["Covered_text_7"] 
+                    </h2>
+                    <br />
+                    <ul>
+                        <li>
+                           @Localizer["Covered_text_8"] 
+
+                        </li>
+                        <li>
+                           @Localizer["Covered_text_9"] 
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="resp ">
+                    <h2>
+                       @Localizer["Covered_text_10"] 
+                    </h2>
+                    <br />
+                    <ul>
+                        <li>
+                           @Localizer["Covered_text_11"] 
+                        </li>
+                        <li>
+                           @Localizer["Covered_text_12"] 
+                        </li>
+                        <li>
+                          @Localizer["Covered_text_13"]  
+                        </li>
+                        <li> <b> @Localizer["Covered_text_14"] </b></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="terms">
+        <div class="container">
+            <div class="row">
+                <h1> @Localizer["Terms"] </h1>
+                <div class="col-sm">
+
+                    <p>
+                        <img src="https://img-android.lisisoft.com/imgmic/0/1/2310-i-com.chana.revisionTimer.jpg" align="bottom" border=0 class="virus_icon" width="100" height="100">
+                        <h2>@Localizer["Terms_text_1_1"]</h2> <br />@Localizer["Terms_text_1_2"]
+                    </p>
+                </div>
+
+                <div class="col-sm">
+
+                    <p>
+                        <img src="https://www.pngkey.com/png/full/386-3866881_children-family-father-kids-mother-parents-icon-stick.png" align="bottom" border=0 class="virus_icon" width="100" height="100">
+                        <h2>@Localizer["Terms_text_2_1"]</h2> <br />@Localizer["Terms_text_2_2"]
+                    </p>
+                </div>
+                <div class="col-sm">
+
+                    <p>
+                        <img src="https://img.icons8.com/nolan/2x/cash.png" align="bottom" border=0 class="virus_icon" width="100" height="100">
+                        <h2>@Localizer["Terms_text_3_1"]</h2> <br />@Localizer["Terms_text_3_2"]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section scripts{
+
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    }
+
+</body>

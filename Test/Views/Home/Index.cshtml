@@ -1,0 +1,77 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+
+@{
+    ViewData["Title"] = @Localizer["Title"];
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+<body>
+    <div class="title">
+        <a asp-controller="Home" asp-action="Edit" asp-route-id="@ViewBag.id">
+            <img style="width: 100px;height:100px" src="https://img.icons8.com/ios/452/settings.png" alt="">
+        </a>
+
+        <div class="comp_name">
+            <span>@Localizer["Company"]  </span>
+        </div>
+    </div>
+    <div class="container main-content">
+        <div class="row">
+
+            <div class="responsive">
+                <div class="gallery transform">
+                    <a asp-controller="Home" asp-action="cars" asp-route-id="@ViewBag.id">
+                        <img src="https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/large-2479-s-classsaloon.jpg" alt="">
+                    </a>
+                    <a asp-controller="Home" asp-action="cars" asp-route-id="@ViewBag.id"><h2>@Localizer["CarHeader"]</h2>@Localizer["CarText"]</a>
+
+                </div>
+            </div>
+            <div class="responsive">
+                <div class="gallery transform">
+                    <a asp-controller="Home" asp-action="medics" asp-route-id="@ViewBag.id">
+                        <img src="https://gamespot1.cbsistatic.com/uploads/original/1597/15975876/3692856-3648594-scrubs.jpg" alt="">
+                    </a>
+                    <a asp-controller="Home" asp-action="medics" asp-route-id="@ViewBag.id"> <h2>@Localizer["MedicHeader"]</h2><br>@Localizer["MedicText"] </a>
+                </div>
+            </div>
+
+            <div class="responsive">
+                <div class="gallery transform">
+                    <a asp-controller="Home" asp-action="covid" asp-route-id="@ViewBag.id">
+                        <img src="https://s.mind.ua/img/forall/a/202103/86.jpg?1588067908" alt="">
+                    </a>
+                    <a asp-controller="Home" asp-action="covid" asp-route-id="@ViewBag.id"><h2>@Localizer["CovidHeader"]</h2><br>@Localizer["CovidText"]</a>
+                </div>
+            </div>
+            <div class="responsive">
+                <div class="gallery transform">
+                    <a asp-controller="Home" asp-action="autocitizen" asp-route-id="@ViewBag.id">
+                        <img src="https://ak2.picdn.net/shutterstock/videos/856942/thumb/1.jpg" alt="">
+                    </a>
+                    <a asp-controller="Home" asp-action="autocitizen" asp-route-id="@ViewBag.id"><h2>@Localizer["AutoHeader"]</h2><br>@Localizer["AutoText"]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="contacts">
+        <div class="cont_info">
+            <h2>@Localizer["Contact"]</h2>
+            <span>+38(067)8020266 </span><br>
+            <span>+38(062)6347823 </span><br>
+            <span>+38(096)7892323 </span><br>
+            <span> fichyga@ukr.net</span><br>
+            <span> crfich@gmail.com</span><br>
+        </div>
+    </div>
+
+</body>
+

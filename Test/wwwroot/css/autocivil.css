@@ -1,0 +1,135 @@
+﻿body {
+    width : 100%;
+    height: 100%;
+}
+
+#order {
+    background: url(https://www.ims360group.com/wp-content/uploads/2015/02/new-car-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    position: relative;
+    color: white;
+    font-weight: bold;
+}
+
+.form-order {
+    position: absolute;
+   
+    width: 400px;
+    border-radius: 24px;
+    color: red;
+    top: 50px;
+    left: 80px;
+}
+
+
+
+.form-control {
+    border: 0;
+    background: white;
+    display: block;
+    text-align: center;
+    border: 2px solid #3498db;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+
+
+.form-control {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: 0;
+    outline: 0;
+    background: transparent;
+   
+}
+
+    .form-control::after {
+        border-radius: 24px;
+    }
+
+
+
+
+    .btn {
+        border: 2px solid #3498db;
+        border-radius: 24px;
+        color: white;
+        width: 100%;
+        transition: background-size 0.25s, color .5s;
+        background-color: black;
+        background-repeat: no-repeat;
+    }
+
+        .btn:hover {
+            background-color: white;
+            color: black;
+        }
+
+#explanation {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+    text-align: left;
+    background-color: #138140;
+    
+}
+
+h1 {
+        width: 100%;
+        text-align:center;
+    }
+h2 {
+    text-align: center;
+}
+img {
+
+    text-decoration: none;
+    border: 0;
+    outline: none;
+}
+
+#terms
+{
+    background-color : lightgrey;
+}
+
+#terms p
+{
+    text-align: center;
+}
+
+li {
+    list-style-type: none; 
+}
+
+ul {
+    padding-left: 0;
+}
+
+.resp {
+    border-right-color: white;
+    border-right-style: solid;
+    border-right-width: 1px;
+    padding: 0 10px;
+    margin: 0 10px;
+    text-align: center;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .resp {
+        text-align: center;
+        border-right-width: 0px;
+        border-bottom-color: white;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        padding-top: 30px;
+        margin-top: 30px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,81 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            @await Html.PartialAsync("_SelectLanguagePartial")
+                            </li>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                            <li class="nav-item">
+                                <input type="button" value="Login" onclick="@("window.location.href='" + @Url.Action("login", "Home") + "'");" />
+
+                            </li>
+                            <li class="nav-item">
+                                <input type="button" value="Sign up" onclick="@("window.location.href='" + @Url.Action("Signup", "Home") + "'");" />
+
+                            </li>
+                        }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <form method="post" asp-controller="Home" asp-action="Logout">
+                                        <input type="submit" value="Вихід" />
+                                    </form>
+
+                                </li>
+                            }
+                            @if (User.IsInRole("admin"))
+                            {
+                                <li class="nav-item">
+                                    <input type="button" value="АвтоСтрахування" onclick="@("window.location.href='" + @Url.Action("RemoveCar", "Home") + "'");" />
+                                </li>
+                                <li class="nav-item">
+                                    <input type="button" value="Медичне страхування" onclick="@("window.location.href='" + @Url.Action("RemoveMedic", "Home") + "'");" />
+                                </li>
+                                <li class="nav-item">
+                                    <input type="button" value="Автоцивілка" onclick="@("window.location.href='" + @Url.Action("RemoveAuto", "Home") + "'");" />
+                                </li>
+                                <li class="nav-item">
+                                    <input type="button" value="COVID" onclick="@("window.location.href='" + @Url.Action("RemoveCOVID", "Home") + "'");" />
+                                </li>
+                            }
+
+                        </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- <footer class="border-top footer text-muted">
+         <div class="container">
+             &copy; 2020 - Test - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+         </div>
+     </footer>-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

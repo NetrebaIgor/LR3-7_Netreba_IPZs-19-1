@@ -1,0 +1,115 @@
+﻿@model Test.Models.InsuranceAutoCitizen;
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Коронозахист + </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script><!--подключение jquery-->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/covid.css" />
+</head>
+
+<body>
+    <div id="order">
+        <div class="container">
+
+            <form class="form-order" asp-action="covid" asp-controller="home">
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+                <div class="form-group">
+                    <input type="text" asp-for="NSF" class="form-control" placeholder="@Localizer["SNP"]" value="@if (ViewBag.User != null) @ViewBag.NSF" />
+                    <span asp-validation-for="NSF"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="date" asp-for="Date" id="datepicker" placeholder="@Localizer["Date"]" class="form-control">
+                    <span asp-validation-for="Date"></span>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="submit" value="@Localizer["Send"]" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="explanation">
+        <div class="container">
+            <div class="row">
+                <h1> @Localizer["Why"]</h1>
+
+                <div class="col-sm">
+                    <img src="https://im0-tub-ru.yandex.net/i?id=13a1565ce4fc60f14db1af5e70a792b7&n=13&exp=1" width="450" height="500">
+                </div>
+
+                <div class="col-sm ">
+
+                    <p>
+                        <img src="https://x-clinic.ru/upload/medialibrary/2a9/2a9e5093931118970ad99b95dfa30b55.png" align="middle" border=0 class="virus_icon" width="60" height="40">
+                        @Localizer["Why_1"]
+                    </p>
+                    <p>
+                        <img src="https://x-clinic.ru/upload/medialibrary/2a9/2a9e5093931118970ad99b95dfa30b55.png" align="middle" border=0 class="virus_icon" width="60" height="40">
+                        @Localizer["Why_2"]
+
+                    </p>  <p>
+                        <img src="https://x-clinic.ru/upload/medialibrary/2a9/2a9e5093931118970ad99b95dfa30b55.png" align="middle" border=0 class="virus_icon" width="60" height="40">
+                        @Localizer["Why_3"]
+
+                    </p>  <p>
+                        <img src="https://x-clinic.ru/upload/medialibrary/2a9/2a9e5093931118970ad99b95dfa30b55.png" align="middle" border=0 class="virus_icon" width="60" height="40">
+                        @Localizer["Why_4"]
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="terms">
+        <div class="container">
+            <div class="row">
+                <h1>@Localizer["Terms"]  </h1>
+                <div class="col-sm">
+
+                    <p>
+                        <img src="https://img-android.lisisoft.com/imgmic/0/1/2310-i-com.chana.revisionTimer.jpg" align="bottom" border=0 class="virus_icon" width="100" height="100">
+                        <h2>@Localizer["Term_1_1"]</h2> <br />@Localizer["Term_1_2"]
+                    </p>
+                </div>
+
+                <div class="col-sm">
+
+                    <p>
+                        <img src="https://www.pngkey.com/png/full/386-3866881_children-family-father-kids-mother-parents-icon-stick.png" align="bottom" border=0 class="virus_icon" width="100" height="100">
+                        <h2>@Localizer["Term_2_1"]</h2> <br />@Localizer["Term_2_2"]
+                    </p>
+                </div>
+                <div class="col-sm">
+
+                    <p>
+                        <img src="https://img.icons8.com/nolan/2x/cash.png" align="bottom" border=0 class="virus_icon" width="100" height="100">
+                        <h2>@Localizer["Term_3_1"]</h2> <br />@Localizer["Term_3_2"]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+
+
+</script>
+
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

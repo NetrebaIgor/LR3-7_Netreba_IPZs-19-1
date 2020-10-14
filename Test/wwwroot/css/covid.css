@@ -1,0 +1,86 @@
+﻿body {
+    
+}
+
+#order {
+    background: url(https://www.24news.am/sites/default/files/2020-06/%D5%AF%D5%B8%D6%80%D5%B8%D5%B6%D5%A1_0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    position : relative;
+}
+
+.form-order {
+    position: absolute;
+    padding: 30px;
+    width: 300px;
+    border: 4px solid #3498db;
+    border-radius: 24px;
+    color: red;
+    background-color: black;
+    top: 50px;
+    right: 80px;
+}
+
+
+
+.form-control {
+    border: 0;
+    background: white;
+    display: block;
+    text-align: center;
+    border: 2px solid #3498db;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+   
+
+
+
+
+    .btn {
+        border: 2px solid #3498db;
+        border-radius: 24px;
+        color: white;
+        width: 100%;
+        transition: background-size 0.25s, color .5s;
+        background-color: black;
+        background-repeat: no-repeat;
+    }
+
+        .btn:hover {
+            background-color: #3498db;
+            color: black;
+        }
+
+#explanation
+{
+    padding: 20px;
+    text-align:left;
+    background-color: lightgrey;
+    
+   
+}
+
+h1 {
+        width: 100%;
+        text-align:center;
+    }
+h2 {
+    text-align: center;
+}
+img {
+
+    text-decoration: none;
+    border: 0;
+    outline: none;
+}
+
+
+
+#terms p
+{
+    text-align: center;
+}
